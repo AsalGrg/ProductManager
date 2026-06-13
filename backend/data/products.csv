@@ -1,4 +1,6 @@
 id,name,description,price,category,status
 1,Wireless Headphones,Premium noise-cancelling headphones,89.99,Electronics,active
 3,Python Programming Book,Complete guide to Python for beginners,34.99,Books,active
-4,Mechanical Keyboard,Tactile switches with RGB backlighting,129.99,Electronics,active
+4,Mechanical Keyboard,Tactile switches with RGB backlighting,2450.0,Electronics,active
+5,Smart Standing Desk,Height adjustable desk 120x60cm with memory presets,1399.99,Furniture,active
+6,Smart Nasal Healer,Nasal healing using frequency,999.99,Health,active

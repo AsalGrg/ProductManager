@@ -79,6 +79,12 @@ def create_product(data: ProductCreate) -> ProductResponse:
 def update_product(product_id:int, data:ProductUpdate)->ProductResponse:
     df= _load()
 
+    match = df[df["id"] == product_id]
+    if match.empty:
+        raise HTTPException(status_code=404, detail="Product not found")
+    
+    row_index= match.index[0]
+
     # Only update fields that were actually sent (not None)
     updates = data.model_dump(exclude_none=True)
     print(updates.items())
@@ -88,7 +94,7 @@ def update_product(product_id:int, data:ProductUpdate)->ProductResponse:
         df.loc[df['id']==product_id, key]= value
 
     _save(df)
-    updated_row = df[df['id']==product_id].iloc[0]
+    updated_row = df.loc[row_index]
     updated_row.to_dict()
     return ProductResponse(**updated_row)
 
