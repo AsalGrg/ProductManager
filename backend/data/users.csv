@@ -1,0 +1,4 @@
+email,hashed_password,role,full_name
+admin@example.com,$2b$12$Ns2B.uYUN58f79IzDadbNuojsJbOSfr.iwhdTlsU4UxEebh3PkN7e,admin,Admin User
+editor@example.com,$2b$12$Q3oG41WrJTGxvrz5NIDQwehnaVNi4rQnNSE6HxKxkvvrFEcYkLwRO,editor,Editor User
+viewer@example.com,$2b$12$..Pamb4.zqOAl3dV5QAQ4ObxpHymPUhHIzSBR.ksyRBWxDT2oQ9p.,viewer,Viewer User
