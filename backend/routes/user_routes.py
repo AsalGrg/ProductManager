@@ -49,6 +49,9 @@ def login_user(
 def logout_user(response: Response):
     response.delete_cookie(
         key= settings.COOKIE_NAME,
+        httponly= settings.COOKIE_HTTPONLY,
+        secure= True,
+        samesite= settings.COOKIE_SAMESITE,
     )
     
     return{
