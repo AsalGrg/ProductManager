@@ -29,7 +29,7 @@ def login_user(
         value= token,
         httponly= settings.COOKIE_HTTPONLY,
         samesite= settings.COOKIE_SAMESITE,
-        max_age= settings.ACCESS_TOKEN_EXPIRE_MINUTES
+        max_age= settings.ACCESS_TOKEN_EXPIRE_MINUTES*60
     )
 
     return{

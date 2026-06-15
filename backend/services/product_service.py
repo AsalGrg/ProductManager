@@ -21,6 +21,7 @@ def get_all_product(
     search: Optional[str]=None,
     category:  Optional[str]=None,
     status:  Optional[str]=None,
+    sortBy:  str='asc',
     page: int =1,
     page_size: int=10
 )-> dict:
@@ -31,10 +32,17 @@ def get_all_product(
         df= df[df['name'].str.contains(search, case=False, na=False)]
     
     if category:
-        df= df[df['category'].str.lower().equals(category.lower())]
+        df = df[df['category'].str.lower() == category.lower()]
 
     if status:
-        df= df[df['status'].str.lower().equals(status.lower())]
+        df = df[df['status'].str.lower() == status.lower()]
+
+
+    if sortBy == "asc":
+        df = df.sort_values(by='price', ascending=True)
+        print('IAM SSSSSSSSSSSS')
+    elif sortBy == "desc":
+        df = df.sort_values(by='price', ascending=False)
 
     total = len(df)
 
@@ -43,7 +51,7 @@ def get_all_product(
     end= start+ page_size
     df = df.iloc[start:end]
 
-    products= df.to_dict()
+    products = [dict(zip(df.columns, row)) for row in df.values]
 
     return{
         'product': products,
@@ -109,4 +117,13 @@ def delete_product(product_id: int) -> dict:
     _save(df)
     return {"message": f"Product {product_id} deleted successfully"}
 
+
+def get_all_categories():
+    df= _load()
+    if df.empty:
+        return []
+
+    # Get unique categories, drop any empty values, return as sorted list
+    categories = df["category"].dropna().unique().tolist()
+    return categories
 

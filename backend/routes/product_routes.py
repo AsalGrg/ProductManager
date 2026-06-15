@@ -16,9 +16,18 @@ def list_products(
     status:    Optional[str] = Query(None, description="Filter by status"),
     page:      int           = Query(1,    ge=1, description="Page number"),
     page_size: int           = Query(10,   ge=1, le=100, description="Items per page"),
+    sortBy: str= Query('asc',description="Sort By Price"),
+
     _: UserPublic = Depends(require_permission("read")),  # Auth gate
 ):
-    return product_service.get_all_product(search, category, status, page, page_size)
+    return product_service.get_all_product(search, category, status, sortBy, page, page_size)
+
+
+@router.get('/categories')
+def get_all_categories(
+    _:UserPublic= Depends(require_permission('read'))
+):
+    return product_service.get_all_categories();
 
 
 # get products by id
