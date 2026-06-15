@@ -3,7 +3,8 @@ uvicorn[standard]
 python-jose[cryptography]
 passlib[bcrypt]
 bcrypt==4.0.1
-pandas==2.1.0
+pandas==2.1.4
+numpy==1.26.4
 python-multipart
 pydantic-settings
-pydantic
+python-dotenv
