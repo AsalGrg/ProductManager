@@ -5,7 +5,7 @@ from models.user import UserInDB, UserPublic, TokenData, ROLES
 from utils.csv_handler import read_csv
 from config import settings
 from fastapi import HTTPException, status
-
+from typing import List, Dict
 
 pwd_context= CryptContext(schemes=['bcrypt'], deprecated= 'auto')
 
@@ -83,3 +83,19 @@ def decode_token(token: str) -> TokenData:
         return TokenData(email=email, role=ROLES(role))
     except JWTError:
         raise credentials_exception
+    
+def get_all_users() -> List[Dict]:
+    df = read_csv(settings.USERS_CSV)
+
+    if df.empty:
+        return []
+
+    # Only expose safe fields
+    safe_columns = ["email", "full_name", "role"]
+
+    # Keep only columns that actually exist in your CSV
+    existing_columns = [col for col in safe_columns if col in df.columns]
+
+    users_df = df[existing_columns].fillna("")
+
+    return users_df.to_dict(orient="records")

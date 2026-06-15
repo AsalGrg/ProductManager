@@ -1,7 +1,7 @@
 import { MoveUp } from 'lucide-react'
 import React from 'react'
 
-const TotalProductsBox = () => {
+const TotalProductsBox = ({ totalProducts }) => {
     return (
 
 
@@ -17,11 +17,11 @@ const TotalProductsBox = () => {
 
             <div className='w-full flex justify-between'>
                 <p className='sub-heading text-white!'>Total Products</p>
-                <div className='p-2 bg-white rounded-full rotate-54'>
-                    <MoveUp width={24} height={24} className='stroke-2'/>
+                <div className='p-2 bg-pure-white rounded-full rotate-54'>
+                    <MoveUp width={24} height={24} className='stroke-2 text-txt-imp-1' />
                 </div>
             </div>
-            <p className='big-text text-white!'>24</p>
+            <p className='big-text text-white!'>{totalProducts}</p>
             <p className='sub-description text-yellow-200!'>5 increased from last month</p>
         </div>
     )

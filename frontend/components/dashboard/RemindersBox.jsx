@@ -6,7 +6,7 @@ import Button from '../Button'
 const RemindersBox = () => {
     return (
         <div className='rounded-2xl
-        bg-white
+        bg-pure-white
         p-4
         flex flex-col
         gap-4

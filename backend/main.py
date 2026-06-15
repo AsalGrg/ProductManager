@@ -3,7 +3,7 @@ Entry point. Registers routers, configures CORS, mounts middleware.
 """
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes import user_routes, product_routes
+from routes import user_routes, product_routes, dashboard_routes
 
 app = FastAPI(
     title= "The Product Manager - API",
@@ -21,3 +21,5 @@ app.add_middleware(
 # Including creater user, and product routes
 app.include_router(user_routes.router)
 app.include_router(product_routes.router)
+app.include_router(dashboard_routes.router)   # ← add this
+

@@ -1,12 +1,12 @@
 import { MoveUp } from 'lucide-react'
 import React from 'react'
 
-const DraftProductsBox = () => {
+const DraftProductsBox = ({totalDraftProducts}) => {
     return (
 
 
         <div className='rounded-2xl
-        bg-white
+        bg-pure-white
         p-4
         flex flex-col
         justify-between
@@ -15,8 +15,8 @@ const DraftProductsBox = () => {
 
         <div className='w-full flex justify-between'>
                 <p className='sub-heading'>Draft Products</p>
-                <div className='p-2 border-2 border-black rounded-full rotate-54'>
-                    <MoveUp width={24} height={24} className='stroke-2' />
+                <div className='p-2 border-2 border-black dark:border-white rounded-full rotate-54'>
+                    <MoveUp width={24} height={24} className='stroke-2 text-txt-imp-1' />
                 </div>
             </div>
             <p className='big-text'>24</p>

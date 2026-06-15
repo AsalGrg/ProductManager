@@ -2,12 +2,13 @@ import { MoveUp } from 'lucide-react'
 import React from 'react'
 import Button from '../Button'
 import Image from 'next/image'
-const ProductsBox = () => {
+import StatusPill from '../StatusPill'
+const ProductsBox = ({ recentProducts }) => {
     return (
 
 
         <div className='rounded-2xl
-        bg-white
+        bg-pure-white
         p-4
         row-span-2
         flex flex-col
@@ -20,17 +21,22 @@ const ProductsBox = () => {
                 <Button text={'Add'} type='sec' />
             </div>
 
-            <div className='products-wrapper'>
-                
-                {/* each product */}
-                <div className='flex justify-between'>
-                    <Image src={'/logo.png'} width={32} height={32} alt='product-avatar' className='object-cover'/>
+            <div className='products-wrapper space-y-8 overflow-y-scroll'>
 
-                    <div>
-                        <p className=''>Wireless Headphone</p>
-                        <p className='sub-description'>Active</p>
+                {/* each product */}
+                {recentProducts.map(each => (
+                    <div className='flex justify-between gap-4'
+                    key={each.id}
+                    >
+                        <Image src={'/bento-img-4.png'} width={40} height={40} alt='product-avatar' className='object-cover' />
+
+                        <div className='w-fit text-start flex-2'>
+                            <p className=''>{each.name}</p>
+                            <StatusPill status={each.status}/>
+                        </div>
                     </div>
-                </div>
+                ))}
+
             </div>
         </div>
     )

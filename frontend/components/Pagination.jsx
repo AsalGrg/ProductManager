@@ -1,6 +1,5 @@
 const Pagination = ({ page, totalPages, onPageChange }) => {
 
-    // Generate page numbers to show [1, 2, 3, 4, 5]
     const pages = Array.from({ length: totalPages }, (_, i) => i + 1)
 
     return (
@@ -10,10 +9,12 @@ const Pagination = ({ page, totalPages, onPageChange }) => {
             <button
                 onClick={() => onPageChange(page - 1)}
                 disabled={page === 1}
-                className={`px-3 py-1 rounded-lg border text-sm font-medium
+                className={`px-3 py-1 rounded-lg border text-sm font-medium transition-all
+                    border-[#e2ddd6] dark:border-[#2e2e2e]
+                    text-txt-imp-1 dark:text-[#f0ece4]
                     ${page === 1
                         ? 'opacity-40 cursor-not-allowed'
-                        : 'hover:bg-gray-100 cursor-pointer'
+                        : 'hover:bg-[#f7f5f2] dark:hover:bg-[#2a2a2a] cursor-pointer'
                     }`}
             >
                 ← Prev
@@ -24,10 +25,11 @@ const Pagination = ({ page, totalPages, onPageChange }) => {
                 <button
                     key={p}
                     onClick={() => onPageChange(p)}
-                    className={`w-8 h-8 rounded-lg text-sm font-medium
+                    className={`w-8 h-8 rounded-lg text-sm font-medium transition-all
                         ${p === page
-                            ? 'bg-green-700 text-white'       // active page
-                            : 'hover:bg-gray-100 text-gray-600'  // inactive
+                            ? 'bg-primary-green text-white'
+                            : `text-txt-imp-2 dark:text-[#a09a91]
+                               hover:bg-[#f7f5f2] dark:hover:bg-[#2a2a2a]`
                         }`}
                 >
                     {p}
@@ -38,10 +40,12 @@ const Pagination = ({ page, totalPages, onPageChange }) => {
             <button
                 onClick={() => onPageChange(page + 1)}
                 disabled={page === totalPages}
-                className={`px-3 py-1 rounded-lg border text-sm font-medium
+                className={`px-3 py-1 rounded-lg border text-sm font-medium transition-all
+                    border-[#e2ddd6] dark:border-[#2e2e2e]
+                    text-txt-imp-1 dark:text-[#f0ece4]
                     ${page === totalPages
                         ? 'opacity-40 cursor-not-allowed'
-                        : 'hover:bg-gray-100 cursor-pointer'
+                        : 'hover:bg-[#f7f5f2] dark:hover:bg-[#2a2a2a] cursor-pointer'
                     }`}
             >
                 Next →
