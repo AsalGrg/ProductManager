@@ -12,7 +12,7 @@ class Settings():
     # Cookie settings
     COOKIE_NAME: str = "access_token"
     COOKIE_HTTPONLY: bool = True
-    COOKIE_SAMESITE: str = "lax"
+    COOKIE_SAMESITE: str = "none"
 
     class Config:
         env_file = ".env"
