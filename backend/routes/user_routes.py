@@ -28,6 +28,7 @@ def login_user(
         key= settings.COOKIE_NAME,
         value= token,
         httponly= settings.COOKIE_HTTPONLY,
+        secure= True,
         samesite= settings.COOKIE_SAMESITE,
         max_age= settings.ACCESS_TOKEN_EXPIRE_MINUTES*60
     )
