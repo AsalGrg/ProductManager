@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "The Product Manager",
+  title: "Productify",
   description: "Manage your products with ease in few clicks.",
 };
 
