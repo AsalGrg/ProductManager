@@ -14,7 +14,8 @@ const UserDetailBar = () => {
 
   const router = useRouter();
   const pathname = usePathname();
-
+  
+  
   return (
     <div
       className="

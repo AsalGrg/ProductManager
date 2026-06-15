@@ -13,6 +13,7 @@ export function AuthProvider({ children }) {
     const router= useRouter();
     async function logout() {
         await logoutUserService();
+        console.log('LOGGED OUT')
         setUser(null);
     }
 
