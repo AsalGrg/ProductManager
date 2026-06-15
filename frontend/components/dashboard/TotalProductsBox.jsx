@@ -1,19 +1,32 @@
 import { MoveUp } from 'lucide-react'
 import React from 'react'
+import useProductFilter from '../../hooks/useProductFilter';
+import { usePathname, useRouter } from 'next/navigation';
 
 const TotalProductsBox = ({ totalProducts }) => {
+    const { status, setStatus, setSearch, setCategory } = useProductFilter();
+    const pathname = usePathname();
+    const router = useRouter();
+
     return (
-
-
         <div className='rounded-2xl
-    primary-card
-    from-95% 
-    col-span-1 row-span-1
-    p-4
-    flex flex-col
-    justify-between
-    cursor-pointer
-    '>
+            primary-card
+            p-4
+            col-span-1
+            flex flex-col
+            justify-between
+            cursor-pointer
+            '
+            onClick={() => {
+
+                if (pathname !== "/dashboard/products") {
+                    router.push("/dashboard/products");
+                }
+                setStatus('')
+                setSearch('')
+                setCategory('')
+            }}
+        >
 
             <div className='w-full flex justify-between'>
                 <p className='sub-heading text-white!'>Total Products</p>

@@ -53,7 +53,7 @@ const EditProductModel = ({ isEditModalOpen, editProduct, setIsEditModalOpen }) 
                 {/* product-information */}
                 <div className='mt-4 flex flex-col items-center'>
                     <div className='space-x-4 flex flex-wrap'>
-                        <Image src={'/bento-img-4.png'} width={320} height={320} alt={editProduct.name} />
+                        <Image src={editProduct.img} width={320} height={320} alt={editProduct.name} />
 
                         <div className='flex-1 space-y-3'>
                             <div className='text-wrapper mt-4 space-y-2'>

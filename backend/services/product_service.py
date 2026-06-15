@@ -40,7 +40,6 @@ def get_all_product(
 
     if sortBy == "asc":
         df = df.sort_values(by='price', ascending=True)
-        print('IAM SSSSSSSSSSSS')
     elif sortBy == "desc":
         df = df.sort_values(by='price', ascending=False)
 

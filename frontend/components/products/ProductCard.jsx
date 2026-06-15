@@ -31,7 +31,7 @@ const ProductCard = ({ product }) => {
                 key={product.id}>
 
                 <Image
-                    src={'/bento-img-4.png'}
+                    src={product.img}
                     alt='product-img'
                     width={1000}
                     height={1000}

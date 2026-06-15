@@ -21,6 +21,7 @@ class UserInDB (BaseModel):
     hashed_password: str
     role: ROLES
     full_name: str
+    img: Optional[str] = None
 
 
 # for client side, without password
@@ -28,8 +29,10 @@ class UserPublic(BaseModel):
     email: str
     role: ROLES
     full_name: str
+    img: str # ← add this too
 
 # What we can get from JWT token
 class TokenData(BaseModel):
     email:str
     role:ROLES
+    

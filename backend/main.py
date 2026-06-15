@@ -12,7 +12,8 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://productify-ebon.vercel.app"],  # Your Next.js dev server
+    allow_origins=["https://productify-ebon.vercel.app",
+                   "http://localhost:3000"],  # Your Next.js dev server
     allow_credentials=True,                   # MUST be True for cookies
     allow_methods=["*"],
     allow_headers=["*"],

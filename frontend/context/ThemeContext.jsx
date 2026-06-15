@@ -5,7 +5,7 @@ import { createContext, useContext, useEffect, useState } from 'react'
 const ThemeContext = createContext(null)
 
 export function ThemeProvider({ children }) {
-    const [isDark, setIsDark] = useState(false)
+    const [isDark, setIsDark] = useState(true)
 
     // On mount — check localStorage for saved preference
     useEffect(() => {

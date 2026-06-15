@@ -1,21 +1,20 @@
-id,name,description,price,category,status
-1,Wireless Headphones-2,Premium noise-cancelling headphones with 30hr battery life,89.99,Electronics,active
-2,Ergonomic Office Chair,Lumbar support chair with adjustable armrests and mesh back,249.99,Furniture,active
-3,Python Programming Book,Complete guide to Python for beginners and intermediates,34.99,Books,active
-4,Mechanical Keyboard,Tactile switches with RGB backlighting and aluminium frame,129.99,Electronics,active
-5,Smart Standing Desk,Height adjustable desk 120x60cm with memory presets,399.99,Furniture,inactive
-6,USB-C Hub 7-in-1,Multi-port hub with HDMI 4K output and 100W PD charging,49.99,Electronics,active
-7,Hardcover Notebook Set,Pack of 3 A5 hardcover notebooks with dotted pages,14.99,Stationery,active
-8,1080p Webcam Pro,Full HD webcam with built-in noise cancelling microphone,69.99,Electronics,active
-9,LED Desk Lamp,Adjustable brightness lamp with USB charging port and timer,39.99,Furniture,active
-10,JavaScript The Good Parts,Classic guide to writing clean and efficient JavaScript,29.99,Books,active
-11,Wireless Ergonomic Mouse,Silent ergonomic mouse with 12 month battery life,45.99,Electronics,active
-12,Aluminium Monitor Stand,Monitor riser with storage drawer and cable management,59.99,Furniture,active
-13,Sticky Notes Mega Pack,600 sticky notes in 6 colours with assorted sizes,9.99,Stationery,active
-14,Clean Code Book,Handbook of agile software craftsmanship by Robert Martin,39.99,Books,inactive
-15,Laptop Sleeve 15 inch,Water resistant sleeve with accessories pocket and handle,24.99,Accessories,active
-16,Portable SSD 1TB,USB-C external solid state drive with 1050MB/s read speed,109.99,Electronics,active
-17,Blue Light Glasses,Anti blue light glasses with UV400 protection clear lens,19.99,Accessories,active
-18,Desk Cable Organiser,Magnetic cable clips and organiser set pack of 20,12.99,Stationery,inactive
-19,Bamboo Desk Organiser,Eco friendly desktop organiser with 6 compartments,34.99,Furniture,active
-20,Deep Work Book,Rules for focused success in a distracted world by Cal Newport,27.99,Books,active
+id,name,description,price,category,status,img
+1,Wireless Headphones,Premium noise-cancelling headphones with 30hr battery life,89.99,Electronics,active,https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg
+2,Ergonomic Office Chair,Lumbar support chair with adjustable armrests and mesh back,249.99,Furniture,active,https://images.pexels.com/photos/1957478/pexels-photo-1957478.jpeg
+3,Python Programming Book,Complete guide to Python for beginners and intermediates,34.99,Books,active,https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg
+5,Smart Standing Desk,Height adjustable desk 120x60cm with memory presets,399.99,Furniture,inactive,https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg
+6,USB-C Hub 7-in-1,Multi-port hub with HDMI 4K output and 100W PD charging,49.99,Electronics,active,https://images.pexels.com/photos/4195342/pexels-photo-4195342.jpeg
+7,Hardcover Notebook Set,Pack of 3 A5 hardcover notebooks with dotted pages,14.99,Stationery,active,https://images.pexels.com/photos/1226398/pexels-photo-1226398.jpeg
+8,1080p Webcam Pro,Full HD webcam with built-in noise cancelling microphone,69.99,Electronics,active,https://images.pexels.com/photos/4526414/pexels-photo-4526414.jpeg
+9,LED Desk Lamp,Adjustable brightness lamp with USB charging port and timer,39.99,Furniture,active,https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg
+10,JavaScript The Good Parts,Classic guide to writing clean and efficient JavaScript,29.99,Books,active,https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg
+11,Wireless Ergonomic Mouse,Silent ergonomic mouse with 12 month battery life,45.99,Electronics,active,https://images.pexels.com/photos/2115257/pexels-photo-2115257.jpeg
+12,Aluminium Monitor Stand,Monitor riser with storage drawer and cable management,59.99,Furniture,active,https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg
+13,Sticky Notes Mega Pack,600 sticky notes in 6 colours with assorted sizes,9.99,Stationery,active,https://images.pexels.com/photos/1629212/pexels-photo-1629212.jpeg
+14,Clean Code Book,Handbook of agile software craftsmanship by Robert Martin,39.99,Books,inactive,https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg
+15,Laptop Sleeve 15 inch,Water resistant sleeve with accessories pocket and handle,24.99,Accessories,active,https://images.pexels.com/photos/812264/pexels-photo-812264.jpeg
+16,Portable SSD 1TB,USB-C external solid state drive with 1050MB/s read speed,109.99,Electronics,active,https://images.pexels.com/photos/2225617/pexels-photo-2225617.jpeg
+17,Blue Light Glasses,Anti blue light glasses with UV400 protection clear lens,19.99,Accessories,active,https://images.pexels.com/photos/1005995/pexels-photo-1005995.jpeg
+18,Desk Cable Organiser,Magnetic cable clips and organiser set pack of 20,12.99,Stationery,inactive,https://images.pexels.com/photos/4792733/pexels-photo-4792733.jpeg
+19,Bamboo Desk Organiser,Eco friendly desktop organiser with 6 compartments,34.99,Furniture,active,https://images.pexels.com/photos/6044266/pexels-photo-6044266.jpeg
+20,Deep Work Book,Rules for focused success in a distracted world by Cal Newport,27.99,Books,active,https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg

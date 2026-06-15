@@ -38,7 +38,8 @@ def login_user(
         "user": UserPublic(
             email=user.email,
             role= user.role,
-            full_name=user.full_name
+            full_name=user.full_name,
+            img= user.img
         )
     }   
 

@@ -2,74 +2,75 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import Button from '../../components/Button'
-import {loginUserService} from '../../services/auth_service'
+import { loginUserService } from '../../services/auth_service'
 import { toast, ToastContainer } from 'react-toastify'
 import useAuth from '../../hooks/useAuth'
 import { useRouter } from 'next/navigation'
+
 const page = () => {
 
     const [email, setemail] = useState('')
     const [password, setPassword] = useState('')
-    
-    const {setUser} = useAuth()
+
+    const { setUser } = useAuth()
+
     async function loginUser() {
-        if(password.length<8){
+        if (password.length < 8) {
             toast.error('Password must be 8 characters')
             return;
         }
-        let userData={
-            email: email,
-            password: password
-        }
+        let userData = { email, password }
         try {
             const data = await loginUserService(userData)
             toast.success(data.message)
             setUser(data.user)
-
-        }catch(e){
-            console.log(e.response.data)
-            toast.error(e.response.data.detail)
+        } catch (e) {
+            toast.error(e.response?.data?.detail)
         }
     }
 
-    const {user, loading} = useAuth();
-    const router= useRouter();
+    const { user, loading } = useAuth();
+    const router = useRouter();
 
     useEffect(() => {
-
-        console.log("Inside Login")
-        console.log(user)
-        console.log(loading)
-        
-        if(user){
-            console.log('jere')
-            router.push('/dashboard')
-        }
+        if (user) router.push('/dashboard')
     }, [user])
-    
+
     return (
-
         <>
+            <div className='flex items-center justify-center h-screen p-4 space-x-4 flex-wrap
+                            bg-white dark:bg-[#141414]'>
 
-            <div className='flex items-center justify-center h-screen bg-white p-4 space-x-4 flex-wrap'>
-
-                <div className='bg-warm-white rounded-2xl flex-1 h-full p-4'>
+                <div className='rounded-2xl flex-1 h-full p-4
+                                bg-warm-white dark:bg-[#1c1c1c]
+                                border border-transparent dark:border-[#2e2e2e]'>
 
                     <div className='flex gap-2 items-center justify-start pt-4'>
                         <Image src={'/logo.png'} alt='logo' width={32} height={32} />
-                        <p className='sub-heading'>Projectify</p>
+                        <p className='sub-heading dark:text-[#f0ece4]'>Projectify</p>
                     </div>
 
                     <div className='h-full flex items-center justify-center'>
                         <div className='w-full lg:w-[80%] space-y-6'>
-                            <h1 className='text-start'>Login To Enter</h1>
+                            <h1 className='text-start dark:text-[#f0ece4]'>Login To Enter</h1>
 
                             <div className='font-inter'>
-                                <form className=' w-full space-y-4'>
+                                <form className='w-full space-y-4'>
 
                                     <div>
-                                        <label htmlFor="email" className='font-semibold'>Please Enter your Email</label>
-                                        <input id={'email'} className=' w-full border-2 border-black/40 rounded-xl p-4 focus:outline-light-green font-inter' placeholder='Enter email'
+                                        <label htmlFor="email"
+                                            className='font-semibold dark:text-[#f0ece4]'>
+                                            Please Enter your Email
+                                        </label>
+                                        <input
+                                            id='email'
+                                            className='w-full border-2 rounded-xl p-4 font-inter
+                                                       border-black/40 dark:border-[#3d3d3d]
+                                                       bg-white dark:bg-[#2a2a2a]
+                                                       text-txt-imp-1 dark:text-[#f0ece4]
+                                                       placeholder:text-txt-imp-3 dark:placeholder:text-[#6b6560]
+                                                       focus:outline-light-green dark:focus:outline-green-700'
+                                            placeholder='Enter email'
                                             value={email}
                                             type='email'
                                             onChange={(e) => setemail(e.target.value)}
@@ -77,8 +78,19 @@ const page = () => {
                                     </div>
 
                                     <div>
-                                        <label htmlFor="password" className='font-semibold'>Please Enter your Password</label>
-                                        <input id='password' className=' w-full border-2 border-black/40 rounded-xl p-4 focus:outline-light-green font-inter' placeholder='Enter password'
+                                        <label htmlFor="password"
+                                            className='font-semibold dark:text-[#f0ece4]'>
+                                            Please Enter your Password
+                                        </label>
+                                        <input
+                                            id='password'
+                                            className='w-full border-2 rounded-xl p-4 font-inter
+                                                       border-black/40 dark:border-[#3d3d3d]
+                                                       bg-white dark:bg-[#2a2a2a]
+                                                       text-txt-imp-1 dark:text-[#f0ece4]
+                                                       placeholder:text-txt-imp-3 dark:placeholder:text-[#6b6560]
+                                                       focus:outline-light-green dark:focus:outline-green-700'
+                                            placeholder='Enter password'
                                             value={password}
                                             onChange={(e) => setPassword(e.target.value)}
                                         />
@@ -86,7 +98,7 @@ const page = () => {
                                 </form>
 
                                 <div className='flex justify-end mt-6'
-                                onClick={loginUser}
+                                    onClick={loginUser}
                                 >
                                     <Button text={'Log In'} />
                                 </div>
@@ -96,7 +108,7 @@ const page = () => {
                 </div>
 
                 <div className='flex-1 bg-red-100 h-full rounded-2xl overflow-hidden hidden lg:block'>
-                    <Image src={'/abstract-1.jpg'} width={1000} height={1000} className='h-full w-full object-cover' />
+                    <Image src={'/abstract-1.jpg'} width={1000} height={1000} className='h-full w-full object-cover' alt='abstract' />
                 </div>
             </div>
 

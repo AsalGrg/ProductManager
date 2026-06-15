@@ -23,7 +23,7 @@ def get_current_user(token: str= Depends(get_token_from_cookie))-> UserPublic:
     if user is None:
         raise HTTPException(status_code=401, detail= "User not found")
     
-    return UserPublic(email=user.email, role= user.role, full_name= user.full_name)
+    return UserPublic(email=user.email, role= user.role, full_name= user.full_name, img=user.img)
 
 
 def require_permission(action:str):

@@ -10,7 +10,7 @@ import ThemeToggle from "../ThemeToggler";
 
 const UserDetailBar = () => {
   const { search, setSearch } = useProductFilter();
-  const { logout } = useAuth();
+  const { logout, user } = useAuth();
 
   const router = useRouter();
   const pathname = usePathname();
@@ -55,7 +55,6 @@ const UserDetailBar = () => {
             if (pathname !== "/dashboard/products") {
               router.push("/dashboard/products");
             }
-
             setSearch(e.target.value);
           }}
           placeholder="Search products"
@@ -76,22 +75,24 @@ const UserDetailBar = () => {
           shrink-0
         "
       >
-        <div className="avatar-container hidden sm:flex gap-2 items-center min-w-0">
-          <div className="rounded-full aspect-square w-10 sm:w-12 shrink-0 overflow-hidden bg-blue-400">
-            <Image
-              src="/logo.png"
-              alt=""
-              width={32}
-              height={32}
-              className="object-cover w-full h-full"
-            />
-          </div>
+        {user && (
+          <div className="avatar-container hidden sm:flex gap-2 items-center min-w-0">
+            <div className="rounded-full aspect-square w-10 sm:w-12 shrink-0 overflow-hidden bg-blue-400">
+              <Image
+                src={user.img}
+                alt=""
+                width={32}
+                height={32}
+                className="object-cover w-full h-full"
+              />
+            </div>
 
-          <div className="min-w-0 hidden md:block">
-            <p className="font-semibold! truncate">Asal Gurung</p>
-            <p className="sub-description truncate">Your Role</p>
+            <div className="min-w-0 hidden md:block">
+              <p className="font-semibold! truncate">{user.full_name}</p>
+              <p className="sub-description truncate">{user.role}</p>
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="flex items-center gap-3 sm:gap-6 pt-2">
           <ThemeToggle />

@@ -16,9 +16,6 @@ const AllMembersBox = ({ allMembers }) => {
 
             <div className='w-full flex justify-between'>
                 <p className='sub-heading'>All Members</p>
-                <div className='p-2 border-2 border-black dark:border-white rounded-full rotate-54'>
-                    <MoveUp width={24} height={24} className='stroke-2 text-txt-imp-1' />
-                </div>
             </div>
 
 
@@ -27,8 +24,8 @@ const AllMembersBox = ({ allMembers }) => {
                 {allMembers.map(each => (
                     <div className="avatar-container flex justify-between items-center">
                         <div className='flex gap-2'>
-                            <div className="rounded-full aspect-square w-12 overflow-hidden bg-blue-400">
-                                <Image src="/logo.png" alt="" width={32} height={32} className="object-cover w-full h-full" />
+                            <div className="rounded-full aspect-square w-12 overflow-hidden bg-warm-white">
+                                <Image src={each.img} alt="" width={32} height={32} className="object-cover w-full h-full" />
                             </div>
                             <div className="">
                                 <p className="font-semibold!">{each.full_name}</p>

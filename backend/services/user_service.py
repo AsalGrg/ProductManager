@@ -31,6 +31,7 @@ def get_user(email: str)-> UserInDB :
     data= row.iloc[0].to_dict()
     return UserInDB(**data)
 
+
 def authenticate_user(email: str, password: str) -> UserInDB:
     user= get_user(email)
 
@@ -91,7 +92,7 @@ def get_all_users() -> List[Dict]:
         return []
 
     # Only expose safe fields
-    safe_columns = ["email", "full_name", "role"]
+    safe_columns = ["email", "full_name", "role", "img"]
 
     # Keep only columns that actually exist in your CSV
     existing_columns = [col for col in safe_columns if col in df.columns]

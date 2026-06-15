@@ -42,7 +42,7 @@ const DeleteProductModel = ({ isDeleteModalOpen, deleteProduct, setIsDeleteModal
                 {/* product-information */}
                 <div className='mt-4 flex flex-col items-center'>
                     <div className='space-y-3'>
-                        <Image src={'/bento-img-4.png'} width={320} height={320} alt={deleteProduct.name} />
+                        <Image src={deleteProduct.img} width={320} height={320} alt={deleteProduct.name} />
 
                         <div className='text-wrapper mt-4'>
                             <StatusPill status={deleteProduct.status} />

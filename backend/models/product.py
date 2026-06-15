@@ -13,6 +13,7 @@ class ProductBase(BaseModel):
     price: float
     category: str
     status: ProductStatus
+    img: str
 
     @field_validator("price")
     @classmethod

@@ -53,11 +53,11 @@ const page = () => {
           <p className=''>Pla, Prioritize, and manage products with ease</p>
         </div>
 
-        <Button text={'Add Products'} />
+        {/* <Button text={'Add Products'} /> */}
       </div>
 
 
-      <div className='w-full grid h-full grid-cols-[repeat(auto-fit,minmax(250px,1fr))] grid-rows-[repeat(3,min(200px,50vh))] gap-2'>
+      <div className='w-full grid h-full grid-cols-[repeat(auto-fill,minmax(280px,1fr))] grid-rows-[repeat(3,min(200px,50vh))] gap-2'>
         <TotalProductsBox totalProducts={data.total_products}/>
         <ActiveProductsBox totalActiveProducts={data.active_products}/>
         <InActiveProductsBox  totalInactiveProducts={data.inactive_products}/>
