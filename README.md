@@ -7,7 +7,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/AsalGrg/ProductManager">
-    <img src="https://res.cloudinary.com/dxbwk0z1y/image/upload/v1781521248/images-Photoroom_xau70h.png" alt="Logo" width="120" height="120">
+    <img src="https://res.cloudinary.com/dxbwk0z1y/image/upload/v1781524947/logo_2_jxkk83.png" alt="Logo" width="120" height="120">
   </a>
 
   <h3 align="center">Productify</h3>
@@ -18,7 +18,7 @@
     <a href="https://github.com/AsalGrg/ProductManager"><strong>Explore the repo »</strong></a>
     <br />
     <br />
-    <a href="#">View Live Demo</a>
+    <a href="https://productify-ebon.vercel.app/">View Live Demo</a>
     &middot;
     <a href="https://github.com/AsalGrg/ProductManager/issues">Report Bug</a>
   </p>
