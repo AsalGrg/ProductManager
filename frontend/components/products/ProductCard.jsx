@@ -14,11 +14,18 @@ const ProductCard = ({ product }) => {
     const [isEditModalOpen, setIsEditModalOpen] = useState(false)
 
     useEffect(() => {
-        if(isDeleteModalOpen) openModal()
-        else closeModal();
+        if(isDeleteModalOpen){
+            openModal()
+        }else{
+            closeModal();
+        }
 
-        if(isEditModalOpen) openModal()
-        else closeModal();
+        if(isEditModalOpen){
+            openModal()
+        }else{
+            closeModal();
+        }
+
 
     }, [isDeleteModalOpen, isEditModalOpen])
 
