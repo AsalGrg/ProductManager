@@ -43,7 +43,6 @@ const page = () => {
     }
 
     useEffect(() => {
-        console.log("gettingAllProducts")
         getAllProducts();
     }, [search, category, sortBy, status, page, pageSize])
 
@@ -210,7 +209,8 @@ const page = () => {
                                           text-txt-imp-3 dark:text-[#6b6560]'>
                                 Category
                             </p>
-                            {allCategories.map(each => (
+                            {
+                            allCategories.map(each => (
                                 <label key={each}
                                     className='flex items-center gap-2 cursor-pointer
                                                text-sm text-txt-imp-1 dark:text-[#f0ece4]'>

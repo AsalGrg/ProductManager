@@ -17,7 +17,6 @@ export function ProductFilterContextProvider({ children }) {
     async function getAllCategories() {
         try{
             const res = await getProductCategoriesService();
-            console.log(res)
             setAllCategories(res)
         }catch(e){
             console.log(e)
